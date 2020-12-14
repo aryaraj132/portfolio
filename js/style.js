@@ -1,14 +1,19 @@
 window.onload = function() {
-    let toggle = document.getElementById("toggle");
+    toggle = document.getElementById("toggle");
     if (window.innerWidth > 715) {
         toggle.checked = true;
         document.getElementById('side-nav-header').style.visibility='visible';
     }
     let side_nav = document.getElementById('side-nav');
-    let container = document.getElementById('container');    
-
+    let container = document.getElementById('container');
     window.addEventListener('resize', function () { 
-        window.location.reload(); 
+        if (window.innerWidth > 715) {
+            toggle.checked = true;
+            document.getElementById('side-nav-header').style.visibility='visible';
+        }
+        else{
+            toggle.checked = false;
+        }
     });
     inViewport = function(div){
         var bounding = div.getBoundingClientRect();
@@ -20,17 +25,25 @@ window.onload = function() {
     };
     animateRight = function(elem){
         if (inViewport(elem)) {
-            elem.setAttribute("style", "visibility: visible;padding-left: 50px;transition: all 1s;");
+            elem.setAttribute("style", "visibility: visible;margin-left: 0px;transition: all 1s;");
         } else {
-            elem.setAttribute("style", "visibility: hidden;padding-left: 0px;transition: all 1s;opacity:0;");
+            elem.setAttribute("style", "visibility: hidden;margin-left: -50px;transition: all 1s;opacity:0;");
         }
     };
     animateUp = function(elem){
         if(inViewport(elem)){
-            elem.setAttribute("style", "visibility: visible;padding-top: 0px;transition: all 1s;");
+            elem.setAttribute("style", "visibility: visible;margin-top: 10px;transition: all 1s;");
         }
         else{
-            elem.setAttribute("style", "visibility: hidden;padding-top: 50px;transition: all 1s;opacity:0;");
+            elem.setAttribute("style", "visibility: hidden;margin-top: 50px;transition: all 1s;opacity:0;");
+        }
+    }
+    animateBar = function(elem,width){
+        if(inViewport(elem)){
+            elem.setAttribute("style", `overflow:visible;width: ${width};transition: all 1s;opacity:1;`);
+        }
+        else{
+            elem.setAttribute("style", `overflow:hidden;width: 10%;transition: all 1s;opacity:0;`);
         }
     }
     window.addEventListener('scroll', function () {
@@ -41,6 +54,10 @@ window.onload = function() {
         animUp = document.querySelectorAll('.animateUp');
         for(var i=0;i<animUp.length;i++){
             animateUp(animUp[i])
+        }
+        animBar = document.querySelectorAll('.animateBar');
+        for(var i=0;i<animBar.length;i++){
+            animateBar(animBar[i],animBar[i].getAttribute('aria-valuenow'))
         }
     });
 }
