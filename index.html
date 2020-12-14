@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/4200f15d56.js" crossorigin="anonymous"></script>
+    <script src="style.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">-->
+    <title>Portfolio | Aryan Raj</title>
+</head>
+
+<body>
+    <div class="flex-container">
+        <input type="checkbox" id="toggle">
+        <label for="toggle"><b id="open" class="fas fa-bars"></b>
+            <b id="cancel" class="fas fa-times"></b>
+        </label>
+        </input>
+        <div class="side-nav" id="side-nav">
+            <div class="header" id="side-nav-header">
+                My Portfolio
+            </div>
+            <div class="body">
+                <div class="dp">
+                    <img src="dp.jpg" alt="Display Picture">
+                </div>
+                <div class="body-content">
+                    <span class="name">
+                        <h1>Aryan Raj</h1>
+                    </span>
+                    <span class="designation">
+                        <p><a href="#">cse student</a> at Engineering College Jhalawar</p>
+                    </span>
+                    
+                    <div class="social-btn">
+                        <a href="https://facebook.com" target="_blank"><button class="fa fa-facebook"></button></a>
+                        <a href="https://twitter.com" target="_blank"><button class="fa fa-twitter"></button></a>
+                        <a href="https://github.com/aryaraj132" target="_blank"><button class="fa fa-github"></button></a>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="#home">Home</a></li><br />
+                            <li><a href="#about">About</a></li><br />
+                            <li><a href="#skills">Skills</a></li><br />
+                            <li><a href="#projects">Projects</a></li><br />
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer">
+                    <div class="footer-text">
+                        <p>Made by - Aryan Raj</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="container" id="container">
+            <div class="container-body" id="home">
+                
+                <h1>Aryan Raj</h1>
+                <h3>Web Developer</h3>
+                <center><button>View Projects</button></center>
+                
+                <div class="social-btn">
+                    <a href="https://facebook.com" target="_blank"><button class="fa fa-facebook"></button></a>
+                    <a href="https://twitter.com" target="_blank"><button class="fa fa-twitter"></button></a>
+                    <a href="https://github.com/aryaraj132" target="_blank"><button class="fa fa-github"></button></a>
+                </div>
+            </div>
+            <div class="container-body" id="about" >
+                <span class="meta-title">
+                    About
+                </span>
+                <div class="body-section">
+                    <p><strong>Hi, I am Aryan Raj</strong>, A C.S.E student at Engineering College Jhalawar, Rajasthan. A tech enthusiast always eager to learn new stuff.</p>
+                    <p>I am on a journey to find my best self untill then i will keep evolving and adapting.</p>
+                </div>
+            </div>
+            <div class="container-body" id="skills" >
+                <span class="meta-title">
+                    My Skills
+                </span>
+            </div>
+            <div class="container-body" id="projects" >
+                <span class="meta-title">
+                    My Projects
+                </span>
+            </div>
+            <div class="container-body" id="contact" >
+                <span class="meta-title">
+                    Contact
+                </span>
+            </div>
+        </div>
+    </div>
+    <script src="slideNav.js" type="text/javascript"></script>
+    <script>
+	    window.slide = new SlideNav({
+		changeHash: true    
+	    });
+    </script>
+</body>
+
+</html>

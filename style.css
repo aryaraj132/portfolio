@@ -1,0 +1,321 @@
+p{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: "Quicksand", Arial, sans-serif;
+}
+button{
+    background: none;
+    color: white;
+    outline: none;
+    border-color: #fff;
+    box-shadow: 0 0 10px #fff;
+    padding: 10px;
+    margin: 20px 0 0 0;
+}
+button:hover{
+    background: black;
+    border-color: #2c98f0;
+    box-shadow: 0 0 10px #2c98f0;
+    padding-top: 11px;
+}
+a{
+    text-decoration: none;
+    color:#2c98f0;
+    font-family: "Quicksand", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 700;
+    line-height: 2;
+    font-family: "Playfair Display", Georgia, serif;
+    margin-bottom: 0px;
+}
+h1{
+    font-size: 22px;
+}
+h2{
+    font-size: 18px;
+}
+h3{
+    font-size: 14px;
+}
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    overflow: hidden;
+}
+.side-nav{
+    height:99.7vh;
+    min-height: 611px;
+    background: #f2f3f7;
+    border: 1px solid transparent;
+    position: fixed;
+    width: 30%;
+    max-width: 300px;
+    top: 0px;
+    left:-40%;
+    display: flex;
+    transition: all .4s;
+    display: flex;
+    justify-content: center;
+}
+.side-nav .header{
+    background-color: grey;
+    height: 35px;
+    width: 100%;
+    padding:5px 0 0 25px ;
+    font-size: x-large;
+    color: white;
+}
+#side-nav-header{
+    visibility: hidden;
+}
+.side-nav .body{
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+    height: 89vh;
+    min-height: 500px;
+    width: 90%;
+    position: absolute;
+    top: 10%;
+    flex-direction: column;
+}
+.side-nav .body .footer{
+    display: flex;
+    justify-content: center;
+    border: 1px solid transparent;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+@media only screen and (max-height: 575px) {
+    .footer{
+        visibility: hidden;
+    }
+  }
+.social-btn{
+    letter-spacing: 20px;
+    height: 25px;
+    padding: 10px;
+}
+.side-nav .body .social-btn button{
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: inherit;
+    padding: 0;
+}
+.social-btn a{
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 16px;
+    line-height: 20px;
+    z-index: 1111;
+}
+.footer-text{
+    height:35px;
+    position: absolute;
+    bottom: 0px;
+    justify-content: center;
+    display: flex;
+    padding: 5px;
+}
+#toggle{
+	display:none;
+}
+label #open,label #cancel {
+	position:fixed;
+	cursor:pointer;	
+    transition:all .4s;
+}
+label #open{
+	left:20px;
+    top:5px;
+    z-index:1111;
+	font-size:30px;
+	transition:all .5s ease;
+}
+label #cancel{
+	left:-195px;
+    top:5px;
+    z-index:1111;
+	font-size:30px;
+	transition:all .5s ease;
+}
+#toggle:checked ~ .side-nav{
+	left: 0px;
+}
+#toggle:checked ~ .container{
+    width: 69.7%;
+    top: 0px;
+}
+#toggle:checked ~ label #open{
+	top:10px;
+	opacity: 0;
+	pointer-events:none;
+}
+
+#toggle:checked ~ label #cancel{
+    left:25%;
+}
+@media only screen and (min-width: 950px) {
+    #toggle:checked ~ label #cancel{
+        left:250px;
+    }
+    #toggle:checked ~ .container{
+        width: calc(100vw - 317px);
+    }
+  }
+#toggle:checked ~ section{
+	margin-left:250px;
+	}
+#toggle:checked ~ .name{
+	margin-left:0px;
+	}
+#toggle:checked ~ footer{
+	margin-left:0;
+    }
+.dp{
+    height: 150px;
+    max-width: 150px;
+    min-width: 100px;
+}	
+.dp img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.body-content{
+    border: 1px solid transparent;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.designation{
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: "Quicksand", Arial, sans-serif;
+    text-align: center;
+}
+nav{
+    border: 1px solid transparent;
+    text-align: center;
+}
+nav ul{
+    list-style-type: none;
+    position: relative;
+    left: -20px;
+}
+nav ul li{
+    line-height: 1.5em;
+    display: inline-block;
+    width: fit-content;
+}
+nav a{
+    color: rgba(0, 0, 0, 0.7);
+}
+nav .active{
+    color: #2c98f0 !important;
+}
+nav .active::after{
+    visibility: visible;
+    transform: scaleX(1) !important;
+    transition: all .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+nav a::after{
+    content: '';
+    display: block;
+    height: 1px;
+    visibility: hidden;
+    transform: scaleX(0);
+    background: #2c98f0;
+    transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+nav a:hover::after{
+    visibility: visible;
+    transform: scaleX(1);
+}
+.side-nav .footer p{
+    font-size: 14px;
+}
+.container{
+    width: 100%;
+    min-height: 95vh;
+    position: absolute;
+    right: 0px;
+    top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    transition: all .4s;
+    border: 1px transparent;
+}
+.container-body{
+    width: 100%;
+    min-height: 100vh;
+    border: 1px transparent;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+.container-body p{
+    font-size: 15px;
+    margin-bottom: 22.5px;
+}
+#home{
+    display: flex;
+    flex-direction: column;
+    background:url('bg-home.jpg'); 
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+}
+.container-body h1{
+    text-transform: uppercase;
+    color: #f2f3f7;
+    letter-spacing: 2px;
+    font-size: xx-large;
+}
+.container-body h3{
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 2px;
+}
+.container-body button{
+    margin-top: 40px;
+    width: 20%;
+}
+.meta-title{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(100, 100, 100, 0.7);
+    font-family: "Quicksand", Arial, sans-serif;
+    border: 1px transparent;
+}
+.meta-title::after{
+    content: '';
+    display: block;
+    height: 1px;
+    width: 20%;
+    background: rgba(100, 100, 100, 0.7);
+}
+.body-section{
+    padding: 50px 0 0 40px;
+    width: 70%;
+}
