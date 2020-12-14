@@ -7,3 +7,7 @@ window.onload = function() {
     let side_nav = document.getElementById('side-nav');
     let container = document.getElementById('container');
 }
+window.addEventListener('resize', function () { 
+    "use strict";
+    window.location.reload(); 
+});
