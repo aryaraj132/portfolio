@@ -500,8 +500,7 @@ nav a:hover::after{
     background: #f2f3f7;
 }
 #projects .row{
-    padding: 20px;
-    padding-left: 40px;
+    padding: 15px;
     width: 90%;
 }
 .slide-pannel{
