@@ -506,7 +506,7 @@ nav a:hover::after{
 }
 .slide-pannel{
     height: auto;
-    width: 500px;
+    width: 49%;
     margin-top: 10px;
     margin-bottom: 30px;
     min-height: 250px;
@@ -704,7 +704,7 @@ border-bottom: 2px solid #a84cb8;
         visibility: hidden;
     }
 }
-@media  only screen and (max-width: 1240px){
+@media  only screen and (max-width: 1025px){
     .slide-pannel{
         width: 95%;
         min-height: 300px ;
