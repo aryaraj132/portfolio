@@ -530,23 +530,32 @@ nav a:hover::after{
     transition: all 1s;
 }
 .slide-footer{
-    position: absolute;
-    bottom: 10px;
+    margin-top: 60px;
     width: 100%;
-}
-.slide-footer button{
-    width: 90%;
-}
-.slide-title, .slide-body, .slide-footer{
-    visibility: hidden;
+    display: none;
     padding: 10px;
     margin-top: 50px;
     opacity: 0;
 }
-.slide-pannel:hover .slide-title, .slide-pannel:hover .slide-body, .slide-pannel:hover .slide-footer{
+.slide-footer button{
+    width: 90%;
+    cursor: pointer;
+}
+.slide-title, .slide-body{
+    visibility: hidden;
+    padding: 10px;
+    margin-left: 50px;
+    opacity: 0;
+}
+.slide-pannel:hover .slide-title, .slide-pannel:hover .slide-body{
     visibility: visible;
     opacity: 1;
-    margin-top: 0px;
+    margin-left: 0px;
+    transition: all 1.4s;
+}
+.slide-pannel:hover .slide-footer{
+    display: block;
+    opacity: 1;
     transition: all 1.4s;
 }
 .pannel-body{
