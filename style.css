@@ -8,6 +8,13 @@ p{
 .centered{
     text-align: center;
 }
+.larger{
+    font-size: 18px !important;
+    font-weight: 600;
+}
+.underline{
+    text-decoration: underline;
+}
 .icon::before{
     display: inline-block;
     font-style: normal;
@@ -21,15 +28,20 @@ p{
 }
 .web::before{
 content: "\f0ac" ;
-color:#ec5453 ;
-
+}
+.clr-1{
+    color:#ec5453 ;
 }
 .software::before{
 content: "\f108";
+}
+.clr-2{
 color:#f9bf3f ;
 }
 .idea::before{
 content: "\f0eb";
+}
+.clr-3{
 color: #a84cb8;
 }
 button{
@@ -70,6 +82,7 @@ h2{
 }
 h3{
     font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
 }
 ::-webkit-scrollbar {
     width: 2px;
@@ -145,7 +158,7 @@ h3{
 @media only screen and (max-height: 575px) {
     .footer{
         visibility: hidden;
-    }
+        }
   }
 .social-btn{
     letter-spacing: 20px;
@@ -216,10 +229,10 @@ label #cancel{
 @media only screen and (min-width: 950px) {
     #toggle:checked ~ label #cancel{
         left:250px;
-    }
+        }
     #toggle:checked ~ .container{
         width: calc(100vw - 304px);
-    }
+        }
   }
 #toggle:checked ~ section{
 	margin-left:250px;
@@ -228,8 +241,8 @@ label #cancel{
 	margin-left:0px;
 	}
 #toggle:checked ~ .footer{
-	margin-left:0;
-    }
+    margin-left:0;
+}
 #toggle:checked ~ .top-menu{
     visibility: hidden;
 }
@@ -360,7 +373,7 @@ nav a:hover::after{
     letter-spacing: 2px;
     font-size: xx-large;
 }
-.container-body h3{
+#home h3{
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.7);
     letter-spacing: 2px;
@@ -393,6 +406,76 @@ nav a:hover::after{
 .body-section p {
     padding-left: 90px;
 }
+.education{
+    padding-left: 40px;
+}
+.collapse{
+    background: #f2f3f7;
+    width: 80% !important;
+    border: 1px solid #e6e6e6 !important;
+    min-height: 50px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 50px;
+    transition: all .5s ease-in-out;
+    text-transform: uppercase;
+}
+.collapse:hover{
+    background: #f2f3f7;
+    box-shadow: none;
+    cursor: pointer;
+}
+.collapse.active{
+    background: #2c98f0;
+    color: #fff;
+    padding-top: 10px;
+    transition: all .5s ease-in-out;
+}
+.collapse.active::after{
+    content:'\2796';
+    transition: all .5s ease-in-out;
+}
+.collapse::after{
+    content:'\02795';
+	font-size:15px;
+	float:right;
+    margin-left:5px;
+    border: none;
+    outline: none;
+    transition: all .5s ease-in-out;
+}
+.collapse-content{
+    width: calc(80% - 2px);
+    border: 1px solid;
+    opacity: 0;
+    min-height: 0px;
+    height: 0px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    visibility: hidden;
+    transition: all .5s ease-in-out;
+}
+.collapse-content a {
+    padding: 10px;
+    font-size: 10px;
+    position: absolute;
+    left: 50px;
+    cursor:auto;
+}
+.collapse-content p{
+    margin-top: 25px;
+    padding: 0;
+}
+.collapse-content.active{
+    opacity: 1;
+    min-height: 100px;
+    height: auto;
+    visibility: visible;
+    transition: all .5s ease-in-out;
+}
 .hidden{
     visibility: hidden;
     padding-left: 0px;
@@ -415,11 +498,6 @@ nav a:hover::after{
     margin-bottom: 10px;
     box-shadow: 0 0 5px #000;
     background: #f2f3f7;
-    
-    
-}
-.pannel  h3{
-    color: rgba(0, 0, 0, 0.7);
 }
 .pannel-body{
     min-height: 70px;
@@ -435,9 +513,6 @@ nav a:hover::after{
     height: 60px;
     text-align: left;
     padding-left: 10px;
-}
-.progress-container h3{
-    color: rgba(0, 0, 0, 0.7);
 }
 .progress-wrap{
     height: 6px;
@@ -552,6 +627,12 @@ border-bottom: 2px solid #a84cb8;
     }
     #toggle:checked ~ label #cancel{
         left:250px;
+    }
+    .collapse{
+        width: 100% !important;
+    }
+    .collapse-content{
+        width: calc(100% - 2px);
     }
 }
 @media only screen and (max-width: 302px){

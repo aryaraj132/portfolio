@@ -71,4 +71,13 @@ window.onload = function() {
             animateBar(animBar[i],animBar[i].getAttribute('aria-valuenow'))
         }
     });
+    var edu = document.querySelectorAll(".collapse");
+        for(var i = 0;i<edu.length;i++){
+        edu[i].addEventListener("click", function(){
+            this.classList.toggle("active");
+            var container = this.nextElementSibling;
+            container.classList.toggle("active");
+            
+        });
+    }
 }
