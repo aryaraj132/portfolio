@@ -406,11 +406,18 @@ nav a:hover::after{
 .body-section p {
     padding-left: 90px;
 }
-.education{
+.section{
+    padding-left: 40px;
+    margin-top: 50px;
+}
+.section .social-btn{
     padding-left: 40px;
 }
+.section button{
+    background: rgba(0, 0, 0, 0.7);
+}
 .collapse{
-    background: #f2f3f7;
+    background: #f2f3f7 !important;
     width: 80% !important;
     border: 1px solid #e6e6e6 !important;
     min-height: 50px;
@@ -428,7 +435,7 @@ nav a:hover::after{
     cursor: pointer;
 }
 .collapse.active{
-    background: #2c98f0;
+    background: #2c98f0 !important;
     color: #fff;
     padding-top: 10px;
     transition: all .5s ease-in-out;
