@@ -499,6 +499,56 @@ nav a:hover::after{
     box-shadow: 0 0 5px #000;
     background: #f2f3f7;
 }
+#projects .row{
+    padding: 20px;
+    padding-left: 40px;
+    width: 90%;
+}
+.slide-pannel{
+    height: auto;
+    width: 500px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    min-height: 250px;
+    border: 1px solid;
+    box-shadow: none;
+    overflow: hidden;
+    position: relative;
+}
+.slide-pannel span{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "Quicksand", Arial, sans-serif;
+}
+.slide-title span{
+    font-size: 14px;
+}
+.slide-pannel:hover{
+    background: #2c98f0 !important;
+    transition: all 1s;
+}
+.slide-footer{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+.slide-footer button{
+    width: 90%;
+}
+.slide-title, .slide-body, .slide-footer{
+    visibility: hidden;
+    padding: 10px;
+    margin-top: 50px;
+    opacity: 0;
+}
+.slide-pannel:hover .slide-title, .slide-pannel:hover .slide-body, .slide-pannel:hover .slide-footer{
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0px;
+    transition: all 1.4s;
+}
 .pannel-body{
     min-height: 70px;
     padding-top: 20px;
@@ -643,5 +693,11 @@ border-bottom: 2px solid #a84cb8;
 @media only screen and (max-width:260px){
     #home .social-btn{
         visibility: hidden;
+    }
+}
+@media  only screen and (max-width: 1240px){
+    .slide-pannel{
+        width: 100%;
+        min-height: 300px ;
     }
 }
