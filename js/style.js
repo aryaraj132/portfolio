@@ -13,6 +13,7 @@ window.onload = function() {
         }
         else{
             toggle.checked = false;
+            document.getElementById('side-nav-header').style.visibility='hidden';
         }
     });
     inViewport = function(div){
@@ -24,10 +25,20 @@ window.onload = function() {
         );
     };
     animateRight = function(elem){
-        if (inViewport(elem)) {
-            elem.setAttribute("style", "visibility: visible;margin-left: 0px;transition: all 1s;");
-        } else {
-            elem.setAttribute("style", "visibility: hidden;margin-left: -50px;transition: all 1s;opacity:0;");
+        if(toggle.checked)
+        {
+            if (inViewport(elem)) {
+                elem.setAttribute("style", "visibility: visible;margin-left: 0px;transition: all 1s;");
+            } else {
+                elem.setAttribute("style", "visibility: hidden;margin-left: -50px;transition: all 1s;opacity:0;");
+            }
+        }
+        else{
+            if (inViewport(elem)) {
+                elem.setAttribute("style", "visibility: visible;margin-left: 0px;transition: all 1s;");
+            } else {
+                elem.setAttribute("style", "visibility: hidden;margin-left: -20px;transition: all 1s;opacity:0;");
+            }
         }
     };
     animateUp = function(elem){
