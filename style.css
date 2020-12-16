@@ -544,7 +544,7 @@ nav a:hover::after{
     opacity: 0;
 }
 .slide-footer button{
-    width: 90%;
+    width: 90% auto;
     cursor: pointer;
 }
 .slide-title, .slide-body{
