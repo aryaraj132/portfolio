@@ -537,39 +537,44 @@ nav a:hover::after{
 }
 
 .slide-footer{
-    margin-top: 60px;
-    width: 100%;
-    display: none;
-    padding: 10px;
     margin-top: 50px;
-    opacity: 0;
     position: absolute;
     bottom: 0px;
+    transform: translateX(-30px);
 }
 .slide-footer button{
     width: 90% auto;
+    margin: 5px;
     cursor: pointer;
 }
-.slide-title, .slide-body{
+.slide-title, .slide-body, .slide-footer{
+    width: 90%;
     visibility: hidden;
     padding: 10px;
-    margin-left: 50px;
     opacity: 0;
+    transition: all 1s;
+}
+.slide-title{
+    transform: translateY(-20px);
+    transition: all 1s;
 }
 .slide-body{
     height: 200px;
     overflow-y: scroll;
+    transform: translateY(20px);
+    transition: all 1s;
 }
 .slide-pannel:hover .slide-title, .slide-pannel:hover .slide-body{
     visibility: visible;
     opacity: 1;
-    margin-left: 0px;
-    transition: all 1.4s;
+    transform: translateY(0px);
+    transition: all 1s;
 }
 .slide-pannel:hover .slide-footer{
-    display: block;
+    visibility: visible;
     opacity: 1;
-    transition: all 1.4s;
+    transform: translateX(0px);
+    transition: all 1s;
 }
 .pannel-body{
     min-height: 70px;

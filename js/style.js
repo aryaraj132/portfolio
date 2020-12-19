@@ -19,8 +19,6 @@ window.onload = function() {
         var bounding = div.getBoundingClientRect();
         return(
             bounding.top <= (window.innerHeight || document.documentElement.clientHeight)-100 &&
-            bounding.left >= 0 &&
-            bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
             bounding.bottom >50
         );
     };
@@ -37,20 +35,10 @@ window.onload = function() {
         );
     };
     animateRight = function(elem){
-        if(toggle.checked)
-        {
-            if (inViewport(elem)) {
-                elem.setAttribute("style", "visibility: visible;transform: translateX(0px);transition: all 1s;");
-            } else {
-                elem.setAttribute("style", "visibility: hidden;transform: translateX(-50px);transition: all 1s;opacity:0;");
-            }
-        }
-        else{
-            if (inViewport(elem)) {
-                elem.setAttribute("style", "visibility: visible;margin-left: 0px;transition: all 1s;");
-            } else {
-                elem.setAttribute("style", "visibility: hidden;margin-left: -20px;transition: all 1s;opacity:0;");
-            }
+        if (inViewport(elem)) {
+            elem.setAttribute("style", "visibility: visible;transform: translateX(0px);transition: all 1s;");
+        } else {
+            elem.setAttribute("style", "visibility: hidden;transform: translateX(-50px);transition: all 1s;opacity:0;");
         }
     };
     animateUp = function(elem){
@@ -70,6 +58,23 @@ window.onload = function() {
             elem.setAttribute("style", `overflow:hidden;width: 10%;transition: all 1s;opacity:0;`);
         }
     }
+    animateLeft = function(elem){
+        if (inViewport(elem)) {
+            elem.setAttribute("style", "visibility: visible;transform: translateX(0px);transition: all 1s;");
+        } else {
+            elem.setAttribute("style", "visibility: hidden;transform: translateX(50px);transition: all 1s;opacity:0;");
+        }
+    };
+    animateDown = function(elem){
+        if(inViewport(elem)){
+            elem.setAttribute("style", "visibility: visible;transform: translateY(0px);transition: all 1s;");
+        }
+        else {
+            elem.setAttribute("style", "visibility: hidden;transform: translateY(-40px);transition: all 1s;opacity:0;");
+        }
+        
+    }
+    
     function animate(){
         animRht = document.querySelectorAll('.animateRight');
         for(var i=0;i<animRht.length;i++){
@@ -82,6 +87,14 @@ window.onload = function() {
         animBar = document.querySelectorAll('.animateBar');
         for(var i=0;i<animBar.length;i++){
             animateBar(animBar[i],animBar[i].getAttribute('aria-valuenow'))
+        }
+        animLft = document.querySelectorAll('.animateLeft');
+        for(var i=0;i<animLft.length;i++){
+            animateLeft(animLft[i])
+        }
+        animDown = document.querySelectorAll('.animateDown');
+        for(var i=0;i<animDown.length;i++){
+            animateDown(animDown[i])
         }
     }
     function pageSlider(e){
