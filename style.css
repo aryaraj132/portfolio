@@ -1,3 +1,6 @@
+*{
+    cursor: none;
+}
 p{
     font-size: 12px;
     font-weight: 400;
@@ -14,6 +17,29 @@ p{
 }
 .underline{
     text-decoration: underline;
+}
+.mouse-block{
+    height: 20px;
+    visibility: hidden;
+    opacity: 0;
+    width: 20px;
+    border: 2px solid #2c98f0;
+    box-shadow: 0 0 10px #2c98f0;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 111111;
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+    transform-origin: 150% 150%;
+    transition: all 0.3s ease-in;
+    backdrop-filter: grayscale();
+    transition-property: box-shadow, transform, border, visiblity, opacity,background;
+}
+.mouse-hover{
+    transform: scale(1.5);
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #ec5453;
+    box-shadow: 0 0 10px #ec5453;
 }
 .icon::before{
     display: inline-block;
@@ -163,13 +189,12 @@ h3{
 .social-btn{
     letter-spacing: 20px;
     height: 25px;
-    padding: 10px;
+    padding: 5px;
 }
 .side-nav .body .social-btn button{
     background: none;
     border: none;
     outline: none;
-    cursor: pointer;
     color: inherit;
     padding: 0;
 }
@@ -177,6 +202,7 @@ h3{
     color: rgba(0, 0, 0, 0.7);
     font-size: 16px;
     line-height: 20px;
+    padding: 10px;
     z-index: 1111;
 }
 .footer-text{
@@ -192,7 +218,6 @@ h3{
 }
 label #open,label #cancel {
 	position:fixed;
-	cursor:pointer;	
     transition:all .4s;
 }
 label #open{
@@ -436,7 +461,6 @@ nav a:hover::after{
 .collapse:hover{
     background: #f2f3f7;
     box-shadow: none;
-    cursor: pointer;
 }
 .collapse.active{
     background: #2c98f0 !important;
@@ -474,7 +498,6 @@ nav a:hover::after{
     font-size: 10px;
     position: absolute;
     left: 50px;
-    cursor:auto;
 }
 .collapse-content p{
     margin-top: 25px;
@@ -545,7 +568,6 @@ nav a:hover::after{
 .slide-footer button{
     width: 90% auto;
     margin: 5px;
-    cursor: pointer;
 }
 .slide-title, .slide-body, .slide-footer{
     width: 90%;
@@ -676,7 +698,7 @@ border-bottom: 2px solid #f9bf3f;
 .pannel.color-3{
 border-bottom: 2px solid #a84cb8;
 }
-@media only screen and (max-width: 465px){
+@media only screen and (max-width: 610px){
     .body-section p {
         padding-left: 40px !important;
     }
@@ -698,6 +720,9 @@ border-bottom: 2px solid #a84cb8;
     }
     .collapse-content{
         width: calc(100% - 2px);
+    }
+    .mouse-block{
+        display: none;
     }
 }
 @media only screen and (max-width: 302px){

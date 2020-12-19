@@ -67,12 +67,20 @@ window.onload = function() {
     };
     animateDown = function(elem){
         if(inViewport(elem)){
-            elem.setAttribute("style", "visibility: visible;transform: translateY(0px);transition: all 1s;");
+            elem.setAttribute("style", "visibility: visible;transform: translateY(0px);transition: all 1s;opacity:1;");
         }
         else {
             elem.setAttribute("style", "visibility: hidden;transform: translateY(-40px);transition: all 1s;opacity:0;");
         }
         
+    }
+    animateFade = function(elem){
+        if(inViewport(elem)){
+            elem.setAttribute("style", "visibility: visible;opacity:1;transition: all 1s;");
+        }
+        else {
+            elem.setAttribute("style", "visibility: hidden;opacity:0;transition: all 1s;");
+        }
     }
     
     function animate(){
@@ -95,6 +103,10 @@ window.onload = function() {
         animDown = document.querySelectorAll('.animateDown');
         for(var i=0;i<animDown.length;i++){
             animateDown(animDown[i])
+        }
+        fade = document.querySelectorAll('.fade');
+        for(var i=0;i<fade.length;i++){
+            animateFade(fade[i])
         }
     }
     function pageSlider(e){
@@ -123,12 +135,10 @@ window.onload = function() {
             }
         }
     }
-    window.addEventListener('scroll', function (e) {
-        animate();
-    });
-    window.addEventListener('wheel', function(e){
+    window.addEventListener('scroll', animate);
+    //window.addEventListener('wheel', function(e){
         //pageSlider(e);
-    });
+    //});
     var edu = document.querySelectorAll(".collapse");
         for(var i = 0;i<edu.length;i++){
         edu[i].addEventListener("click", function(){
@@ -160,6 +170,41 @@ window.onload = function() {
             footer.setAttribute("style","visibility: hidden;opacity: 0;transform: translateX(-30px);transition: all 1s;");
         });
     }
-    
-    
 }
+let mouseCursor = document.querySelector('.mouse-block');
+    window.addEventListener('mousemove', function(e){
+        mouseCursor.setAttribute("style",`visibility: visible;opacity: 1;top:${e.pageY}px;left:${e.pageX}px;`);
+    });
+let a = document.getElementsByTagName('a');
+let button = document.getElementsByTagName('button');
+for(var i=0;i<a.length;i++) {
+    const link = a[i];
+    link.addEventListener('mouseover',() =>{
+        mouseCursor.classList.add("mouse-hover");
+    });   
+    link.addEventListener('mouseleave',() =>{
+        mouseCursor.classList.remove("mouse-hover");
+    });     
+};
+for(var i=0;i<button.length;i++) {
+    const link = button[i];
+    link.addEventListener('mouseover',() =>{
+        mouseCursor.classList.add("mouse-hover");
+    });   
+    link.addEventListener('mouseleave',() =>{
+        mouseCursor.classList.remove("mouse-hover");
+    });     
+};
+document.getElementById('open').addEventListener('mouseover',()=>{mouseCursor.classList.add("mouse-hover");});
+document.getElementById('open').addEventListener('mouseleave',()=>{mouseCursor.classList.remove("mouse-hover");});
+document.getElementById('cancel').addEventListener('mouseover',()=>{mouseCursor.classList.add("mouse-hover");});
+document.getElementById('cancel').addEventListener('mouseleave',()=>{mouseCursor.classList.remove("mouse-hover");});
+for (let i = 0; i < projects.length; i++) {
+    const link = projects[i];
+    link.addEventListener('mouseover',() =>{
+        mouseCursor.classList.add("mouse-hover");
+    });   
+    link.addEventListener('mouseleave',() =>{
+        mouseCursor.classList.remove("mouse-hover");
+    });     
+};
