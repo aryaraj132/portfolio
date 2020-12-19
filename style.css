@@ -351,7 +351,7 @@ nav a:hover::after{
 .container-body{
     width: 100%;
     min-height: calc(100vh - 100px);
-    border: 1px solid black;
+    border: 1px solid transparent;
     padding-top: 50px;
     padding-left: 40px;
     padding-bottom: 50px;
@@ -410,14 +410,14 @@ nav a:hover::after{
 .about{
     margin:50px 0 100px 0;
 }
-.section{
+.section-content{
     padding-left: 40px;
     margin-top: 50px;
 }
-.section .social-btn{
+.section-content .social-btn{
     padding-left: 40px;
 }
-.section button{
+.section-content button{
     background: rgba(0, 0, 0, 0.7);
 }
 .collapse{
@@ -535,10 +535,7 @@ nav a:hover::after{
 .slide-title span{
     font-size: 14px;
 }
-.slide-pannel:hover{
-    background: #2c98f0 !important;
-    transition: all 1s;
-}
+
 .slide-footer{
     margin-top: 60px;
     width: 100%;
@@ -734,3 +731,4 @@ border-bottom: 2px solid #a84cb8;
         min-height: 300px ;
     }
 }
+
