@@ -564,18 +564,6 @@ nav a:hover::after{
     transform: translateY(20px);
     transition: all 1s;
 }
-.slide-pannel:hover .slide-title, .slide-pannel:hover .slide-body{
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 1s;
-}
-.slide-pannel:hover .slide-footer{
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(0px);
-    transition: all 1s;
-}
 .pannel-body{
     min-height: 70px;
     padding-top: 20px;
