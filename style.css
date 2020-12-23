@@ -1,5 +1,6 @@
 *{
     cursor: none;
+    margin: 0;
 }
 p{
     font-size: 12px;
@@ -20,26 +21,65 @@ p{
 }
 .mouse-block{
     height: 20px;
+    width: 20px;
     visibility: hidden;
     opacity: 0;
     width: 20px;
-    border: 2px solid #2c98f0;
-    box-shadow: 0 0 10px #2c98f0;
+    border: 2px solid #a545bd;
+    box-shadow: 0 0 10px #a545bd;
     border-radius: 50%;
     position: absolute;
     z-index: 111111;
     pointer-events: none;
-    transform: translate(-50%,-50%);
-    transform-origin: 150% 150%;
-    transition: all 0.3s ease-in;
+    transition: 0.3s ease-in-out;
     backdrop-filter: grayscale();
     transition-property: box-shadow, transform, border, visiblity, opacity,background;
+    animation: mouse-pulse 0.5s infinite alternate;
 }
-.mouse-hover{
-    transform: scale(1.5);
-    background: rgba(0, 0, 0, 0.7);
+.mouse-block::after{
+    content:"";
+    width: 20px;
+    height: 20px;
+    border: 8px solid gray;
+    border-radius: 50%;
+    position: absolute;
+    top:-8px;
+    left:-8px;
+    opacity: 0.4;
+    animation: mouse-pulse-after 0.5s infinite alternate;
+}
+@keyframes mouse-pulse-after{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0.4);
+    }
+}
+@keyframes mouse-pulse{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0.7);
+    }
+}
+@keyframes mouse-click{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(2);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+.mouse-click{
     border: 2px solid #ec5453;
     box-shadow: 0 0 10px #ec5453;
+    animation: mouse-click 0.7s forwards;
 }
 .icon::before{
     display: inline-block;
@@ -127,12 +167,41 @@ h3{
     border-radius: 10px;
     width: 2px;
   }
+/*.loading{
+    height: 100vh;
+    width: 100%;
+    background: #000;
+    position: absolute;
+}
+.loading-wrap{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.loading h1{
+    text-align: center;
+    color: #f2f3f7;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: all 1s;
+    line-height: 5rem;
+}
+.loading img{
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+.loading span{
+    visibility: hidden;
+    opacity: 0;
+    font-size: 0.5rem;
+}*/
 .flex-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    overflow: hidden;
+    /*display: none;*/
 }
 .side-nav{
     height:99.7vh;
@@ -145,7 +214,8 @@ h3{
     top: 0px;
     left:-40%;
     display: flex;
-    transition: all .4s;
+    transition: .4s;
+    transition-property: visibility, left;
     display: flex;
     visibility: hidden;
     justify-content: center;
@@ -218,21 +288,21 @@ h3{
 }
 label #open,label #cancel {
 	position:fixed;
-    transition:all .4s;
+    transition:left .4s;
 }
 label #open{
 	left:20px;
     top:5px;
     z-index:1111;
 	font-size:30px;
-	transition:all .5s ease;
+	transition:left .5s ease;
 }
 label #cancel{
 	left:-195px;
     top:5px;
     z-index:1111;
 	font-size:30px;
-	transition:all .5s ease;
+	transition:left .5s ease;
 }
 #toggle:checked ~ .side-nav{
     left: 0px;
@@ -316,7 +386,6 @@ label #cancel{
 }
 .top-menu ul{
     position: relative;
-    top: -12px;
     left: 0px;
     letter-spacing: 15px;
 }
@@ -343,7 +412,7 @@ nav .active{
 nav .active::after{
     visibility: visible;
     transform: scaleX(1) !important;
-    transition: all .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 nav a::after{
     content: '';
@@ -352,7 +421,7 @@ nav a::after{
     visibility: hidden;
     transform: scaleX(0);
     background: #2c98f0;
-    transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 nav a:hover::after{
     visibility: visible;
@@ -720,9 +789,6 @@ border-bottom: 2px solid #a84cb8;
     }
     .collapse-content{
         width: calc(100% - 2px);
-    }
-    .mouse-block{
-        display: none;
     }
 }
 @media only screen and (max-width: 302px){
