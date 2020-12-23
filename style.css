@@ -9,6 +9,27 @@ p{
     color: rgba(0, 0, 0, 0.7);
     font-family: "Quicksand", Arial, sans-serif;
 }
+.balloons{
+    position: fixed;
+    z-index: 22;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.balloons svg{
+    animation: windMotion 3.5s infinite alternate;
+    transform-origin: bottom;
+}
+@keyframes windMotion{
+    from{
+        transform: rotateZ(-10deg);
+    }
+    to{
+        transform: rotateZ(10deg);
+    }
+}
 .centered{
     text-align: center;
 }
