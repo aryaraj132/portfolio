@@ -9,6 +9,37 @@ p{
     color: rgba(0, 0, 0, 0.7);
     font-family: "Quicksand", Arial, sans-serif;
 }
+.popup{
+    width: 80%;
+    max-width: 300px;
+    border-radius: 30px;
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    z-index: 22;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(350px);
+    transition: 0.7s ease-in-out;
+    transition-property: opacity, transform;
+}
+.close-popup{
+    font-size: large;
+    padding: 5px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -5px;
+}
+.popup h1{
+    color: #729fe2;
+}
+.popup p{
+    color: #f9bf3f;
+}
 /*.balloons{
     position: fixed;
     z-index: 22;

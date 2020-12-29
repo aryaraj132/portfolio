@@ -1,5 +1,6 @@
 window.onload = function() {
     toggle = document.getElementById("toggle");
+    document.querySelector('.popup').setAttribute("style","transform: translateX(0px);opacity:1;");
     //balloons = document.querySelector('.balloons');
     //balloons.style.top= window.innerHeight - 190 + "px";
     //setTimeout(()=>{balloons.setAttribute("style","top:-160px;visibility:hidden;opacity:0;transition:5s ease-in-out;transition-property:opacity,top,visibility;");},5000)
@@ -185,6 +186,11 @@ window.onload = function() {
         });
     }
 }
+let closePop = document.querySelector('.close-popup');
+let popup = document.querySelector('.popup');
+closePop.addEventListener('click',()=>{
+    popup.setAttribute("style","opacity:0;transform: translateX(350px);");
+})
 let mouseCursor = document.querySelector('.mouse-block');
     window.addEventListener('mousemove', function(e){
         mouseCursor.classList.remove('mouse-click');
