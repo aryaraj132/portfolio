@@ -26,7 +26,8 @@ p{
     transition-property: opacity, transform;
 }
 .close-popup{
-    font-size: large;
+    width: 15px;
+    height: 15px;
     padding: 5px;
     background: red;
     border-radius: 50%;
