@@ -6,7 +6,6 @@ window.onload = function() {
     //setTimeout(()=>{balloons.setAttribute("style","top:-160px;visibility:hidden;opacity:0;transition:5s ease-in-out;transition-property:opacity,top,visibility;");},5000)
     if (window.innerWidth > 715) {
         toggle.checked = true;
-        document.getElementById('side-nav-header').style.visibility='visible';
     }
     //loading = document.querySelector('.loading');
     //loading_text = document.querySelectorAll('.loading span');
@@ -22,11 +21,9 @@ window.onload = function() {
         //balloons.style.top= window.innerHeight - 190 + "px"; 
         if (window.innerWidth > 715) {
             toggle.checked = true;
-            document.getElementById('side-nav-header').style.visibility='visible';
         }
         else{
             toggle.checked = false;
-            document.getElementById('side-nav-header').style.visibility='hidden';
         }
     });
     inViewport = function(div){
