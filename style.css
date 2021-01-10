@@ -635,7 +635,46 @@ nav a:hover::after{
     justify-content: space-between;
     width: 100%;
     margin-top: 100px;
-
+}
+.icon-row{
+    justify-content: space-evenly !important;
+}
+@media only screen and (min-width:1255px){
+    .icon-row{
+        width: 80%;
+        margin-top: 100px !important;
+        margin: auto;
+    }
+    .icon-pannel{
+        margin-left: 20px;
+    }
+}
+.icon-pannel{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    max-height: 512px;
+    max-width: 512px;
+    overflow: hidden;
+}
+.icon-pannel:hover .caption{
+    height: 20px;
+    transition: height 0.3s ease-in-out;
+}
+.icon-pannel .caption{
+    height: 0px;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    width: inherit;
+    color: #f2f3f7;
+    transition: height 0.3s ease-in-out;
+}
+.icon-pannel img{
+    width: inherit;
+    height: inherit;
 }
 .pannel{
     height: auto;
