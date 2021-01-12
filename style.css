@@ -85,8 +85,8 @@ p{
     visibility: hidden;
     opacity: 0;
     width: 20px;
-    border: 2px solid #d59ce4;
-    box-shadow: 0 0 10px #d59ce4;
+    border: 2px solid #a53838;
+    box-shadow: 0 0 20px #a53838;
     border-radius: 50%;
     position: absolute;
     z-index: 111111;
@@ -100,7 +100,7 @@ p{
     content:"";
     width: 20px;
     height: 20px;
-    border: 8px solid white;
+    border: 8px solid rgb(192, 148, 148);
     border-radius: 50%;
     position: absolute;
     top:-8px;
@@ -523,16 +523,12 @@ nav a:hover::after{
     color: rgba(255, 255, 255, 0.7);
     letter-spacing: 2px;
 }
-#about h3{
-    color:  rgba(255, 255, 255, 0.7);
-    
-}
 .container-body button{
     margin-top: 40px;
     width: 50px;
 }
 .section{
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(14px);
 }
 .meta-title{
@@ -573,31 +569,36 @@ nav a:hover::after{
     background: rgba(0, 0, 0, 0.7);
 }
 .collapse{
-    background: #f2f3f7 !important;
+    background: rgba(255, 255, 255, 0.5) !important;
     width: 80% !important;
-    border: 1px solid #e6e6e6 !important;
+    border: none;
+    border-radius: 20px;
     min-height: 50px;
     text-align: left;
     color: rgba(0, 0, 0, 0.7);
     font-size: 15px;
     font-weight: 500;
     padding-left: 50px;
-    transition: all .5s ease-in-out;
+    transition: .5s ease-in-out;
+    transition-property: border-radius, background, color;
     text-transform: uppercase;
+    backdrop-filter: blur(50px);
+    box-shadow: none;
 }
 .collapse:hover{
     background: #f2f3f7;
-    box-shadow: none;
 }
 .collapse.active{
     background: #2c98f0 !important;
     color: #fff;
     padding-top: 10px;
-    transition: all .5s ease-in-out;
+    transition: .5s ease-in-out;
+    transition-property: border-radius, background, color;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 .collapse.active::after{
     content:'\2796';
-    transition: all .5s ease-in-out;
 }
 .collapse::after{
     content:'\02795';
@@ -606,36 +607,38 @@ nav a:hover::after{
     margin-left:5px;
     border: none;
     outline: none;
-    transition: all .5s ease-in-out;
 }
 .collapse-content{
     width: calc(80% - 2px);
-    border: 1px solid;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(50px);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     opacity: 0;
-    min-height: 0px;
     height: 0px;
     position: relative;
     overflow: hidden;
     text-align: center;
-    visibility: hidden;
-    transition: all .5s ease-in-out;
+    transition: .5s ease-in-out;
+    transition-property: height, opacity;
 }
 .collapse-content a {
     padding: 10px;
     font-size: 10px;
     position: absolute;
     left: 50px;
+    color: #2c98f0;
 }
 .collapse-content p{
     margin-top: 25px;
     padding: 0;
+    color: rgba(255, 255, 255, 0.7);
 }
 .collapse-content.active{
     opacity: 1;
-    min-height: 100px;
-    height: fit-content;
-    visibility: visible;
-    transition: all .5s ease-in-out;
+    height:150px;
+    transition: .5s ease-in-out;
+    transition-property: height, opacity;
 }
 .hidden{
     visibility: hidden;
@@ -696,6 +699,7 @@ nav a:hover::after{
     width: calc(30vw - 110px);
     margin-top: 10px;
     margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 5px #000;
     backdrop-filter: blur(50px);
 }
