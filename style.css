@@ -568,9 +568,12 @@ nav a:hover::after{
 .section-content button{
     background: rgba(0, 0, 0, 0.7);
 }
+.edu-section{
+    text-align: center;
+}
 .collapse{
     background: rgba(255, 255, 255, 0.5) !important;
-    width: 80% !important;
+    width: 90% !important;
     border: none;
     border-radius: 20px;
     min-height: 50px;
@@ -609,7 +612,7 @@ nav a:hover::after{
     outline: none;
 }
 .collapse-content{
-    width: calc(80% - 2px);
+    width: 90%;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(50px);
     border-bottom-left-radius: 20px;

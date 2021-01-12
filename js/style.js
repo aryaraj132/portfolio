@@ -7,6 +7,7 @@ window.onload = function() {
     if (window.innerWidth > 715) {
         toggle.checked = true;
     }
+    home = document.getElementById('home');
     //loading = document.querySelector('.loading');
     //loading_text = document.querySelectorAll('.loading span');
     //document.querySelector('.loading img').setAttribute("style", "visibility: visible;opacity:1;width:200px;transition: all 0.5s;");
@@ -47,50 +48,50 @@ window.onload = function() {
     };
     animateRight = function(elem){
         if (inViewport(elem)) {
-            elem.setAttribute("style", "visibility: visible;transform: translateX(0px);transition: 1s;transition-property:visibility,opacity,transform;");
+            elem.setAttribute("style", "visibility: visible;transform: translateX(0px);transition: 1s;transition-property:visibility,opacity,transform,visibility;");
         } else {
-            elem.setAttribute("style", "visibility: hidden;transform: translateX(-50px);transition: 1s;opacity:0;transition-property:visibility,opacity,transform;");
+            elem.setAttribute("style", "visibility: hidden;transform: translateX(-50px);transition: 1s;opacity:0;transition-property:visibility,opacity,transform,visibility;");
         }
     };
     animateUp = function(elem){
         if(inViewport(elem)){
-            elem.setAttribute("style", "visibility: visible;transform: translateY(0px);transition: 1s;transition-property:visibility,opacity,transform;");
+            elem.setAttribute("style", "visibility: visible;transform: translateY(0px);transition: 1s;transition-property:visibility,opacity,transform,visibility;");
         }
         else {
-            elem.setAttribute("style", "visibility: hidden;transform: translateY(40px);transition: 1s;opacity:0;transition-property:visibility,opacity,transform;");
+            elem.setAttribute("style", "visibility: hidden;transform: translateY(40px);transition: 1s;opacity:0;transition-property:visibility,opacity,transform,visibility;");
         }
         
     }
     animateBar = function(elem,width){
         if(inViewport(elem)){
-            elem.setAttribute("style", `overflow:visible;width: ${width};transition: 1s;opacity:1;transition-property:width,opacity;`);
+            elem.setAttribute("style", `overflow:visible;width: ${width};transition: 1s;opacity:1;transition-property:width,opacity,visibility;`);
         }
         else{
-            elem.setAttribute("style", `overflow:hidden;width: 10%;transition: 1s;opacity:0;transition-property:width,opacity;`);
+            elem.setAttribute("style", `overflow:hidden;width: 10%;transition: 1s;opacity:0;transition-property:width,opacity,visibility;`);
         }
     }
     animateLeft = function(elem){
         if (inViewport(elem)) {
-            elem.setAttribute("style", "visibility: visible;transform: translateX(0px);transition: 1s;transition-property:opacity,transform;");
+            elem.setAttribute("style", "visibility: visible;transform: translateX(0px);transition: 1s;transition-property:opacity,transform,visibility;");
         } else {
-            elem.setAttribute("style", "visibility: hidden;transform: translateX(50px);transition: 1s;opacity:0;transition-property:opacity,transform;");
+            elem.setAttribute("style", "visibility: hidden;transform: translateX(50px);transition: 1s;opacity:0;transition-property:opacity,transform,visibility;");
         }
     };
     animateDown = function(elem){
         if(inViewport(elem)){
-            elem.setAttribute("style", "visibility: visible;transform: translateY(0px);transition: 1s;opacity:1;transition-property:opacity,transform;");
+            elem.setAttribute("style", "visibility: visible;transform: translateY(0px);transition: 1s;opacity:1;transition-property:opacity,transform,visibility;");
         }
         else {
-            elem.setAttribute("style", "visibility: hidden;transform: translateY(-40px);transition: 1s;opacity:0;transition-property:opacity,transform;");
+            elem.setAttribute("style", "visibility: hidden;transform: translateY(-40px);transition: 1s;opacity:0;transition-property:opacity,transform,visibility;");
         }
         
     }
     animateFade = function(elem){
         if(inViewport(elem)){
-            elem.setAttribute("style", "visibility: visible;opacity:1;transition: 1s;transition-property:opacity;");
+            elem.setAttribute("style", "visibility: visible;opacity:1;transition: 1s;transition-property:opacity,visibility;");
         }
         else {
-            elem.setAttribute("style", "visibility: hidden;opacity:0;transition: 1s;transition-property:opacity;");
+            elem.setAttribute("style", "visibility: hidden;opacity:0;transition: 1s;transition-property:opacity,visibility;");
         }
     }
     
@@ -146,10 +147,15 @@ window.onload = function() {
             }
         }
     }
-    window.addEventListener('scroll', animate);
-    //window.addEventListener('wheel', function(e){
-        //pageSlider(e);
-    //});
+    window.addEventListener('scroll', ()=>{
+        animate();
+        //if(!inViewport(home)){
+        //    toggle.checked = false;
+        //}
+        //else if(window.innerWidth > 715 && inViewport(home)){
+        //    toggle.checked = true;
+        //}
+    });
     var edu = document.querySelectorAll(".collapse");
         for(var i = 0;i<edu.length;i++){
         edu[i].addEventListener("click", function(){
