@@ -2,6 +2,10 @@
     cursor: none;
     margin: 0;
 }
+body{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 p{
     font-size: 12px;
     font-weight: 400;

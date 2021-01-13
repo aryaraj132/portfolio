@@ -147,15 +147,7 @@ window.onload = function() {
             }
         }
     }
-    window.addEventListener('scroll', ()=>{
-        animate();
-        //if(!inViewport(home)){
-        //    toggle.checked = false;
-        //}
-        //else if(window.innerWidth > 715 && inViewport(home)){
-        //    toggle.checked = true;
-        //}
-    });
+    window.addEventListener('scroll', animate);
     var edu = document.querySelectorAll(".collapse");
         for(var i = 0;i<edu.length;i++){
         edu[i].addEventListener("click", function(){
