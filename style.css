@@ -737,6 +737,23 @@ nav a:hover::after{
     padding: 15px;
     width: 90%;
 }
+.panel-title{
+    position: absolute;
+    backdrop-filter: blur(1px);
+    box-shadow: 0 0 10px #fff inset;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+.panel-title span{
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #f9bf3f !important;
+}
 .slide-pannel{
     height: 300px;
     width: 49%;
