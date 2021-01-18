@@ -491,10 +491,33 @@ nav a:hover::after{
     right: 0px;
     top: 35px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     transition: all .4s;
     border: 1px transparent;
     scroll-behavior: smooth;
+}
+.about-section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(14px);
+}
+#about{
+    width: 90% !important;
+    background:rgba(255, 255, 255, 0.5);
+    margin-top: -100px;
+    border-radius: 20px;
+}
+#about h3{
+    color: rgba(0, 0, 0, 0.7);
+}
+#about .meta-title{
+    color: rgba(0, 0, 0, 0.7);
+}
+#about .meta-title::after{    
+    background: rgba(0, 0, 0, 0.7) !important;
 }
 .container-body{
     width: 100%;
@@ -573,11 +596,14 @@ nav a:hover::after{
     background: rgba(0, 0, 0, 0.7);
 }
 .edu-section{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
 }
 .collapse{
     background: rgba(255, 255, 255, 0.5) !important;
-    width: 90% !important;
+    width: 100% !important;
     border: none;
     border-radius: 20px;
     min-height: 50px;
@@ -591,9 +617,6 @@ nav a:hover::after{
     text-transform: uppercase;
     backdrop-filter: blur(50px);
     box-shadow: none;
-}
-.collapse:hover{
-    background: #f2f3f7;
 }
 .collapse.active{
     background: #2c98f0 !important;
@@ -616,7 +639,7 @@ nav a:hover::after{
     outline: none;
 }
 .collapse-content{
-    width: 90%;
+    width: 100%;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(50px);
     border-bottom-left-radius: 20px;
@@ -639,7 +662,7 @@ nav a:hover::after{
 .collapse-content p{
     margin-top: 25px;
     padding: 0;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.7);
 }
 .collapse-content.active{
     opacity: 1;
