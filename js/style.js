@@ -7,7 +7,7 @@ window.onload = function() {
     if (window.innerWidth > 715) {
         toggle.checked = true;
     }
-    home = document.getElementById('home');
+    //home = document.getElementById('home');
     //loading = document.querySelector('.loading');
     //loading_text = document.querySelectorAll('.loading span');
     //document.querySelector('.loading img').setAttribute("style", "visibility: visible;opacity:1;width:200px;transition: all 0.5s;");
@@ -147,7 +147,14 @@ window.onload = function() {
             }
         }
     }
-    window.addEventListener('scroll', animate);
+    window.addEventListener('scroll', ()=>{
+        animate()
+        brdR = 50 - (window.scrollY/10);
+        if (brdR < 0){
+            brdR=0;
+        }
+        document.getElementById('home').setAttribute("style",`border-bottom-left-radius:${brdR}%;border-bottom-right-radius:${brdR}%;`);
+    });
     var edu = document.querySelectorAll(".collapse");
         for(var i = 0;i<edu.length;i++){
         edu[i].addEventListener("click", function(){

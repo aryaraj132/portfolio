@@ -534,7 +534,11 @@ nav a:hover::after{
 #home{
     display: flex;
     flex-direction: column;
-    background:url('bg-home.jpg'); 
+    background: #4568dc; 
+    background: -webkit-linear-gradient(to top, #4568dc, #b06ab3);
+    background: linear-gradient(to top, #4568dc, #b06ab3);
+    border-bottom-left-radius:50% ;
+    border-bottom-right-radius:50% ;
     background-size: cover;
     justify-content: center;
     text-align: center;
