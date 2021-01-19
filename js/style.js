@@ -153,7 +153,9 @@ window.onload = function() {
         if (brdR < 0){
             brdR=0;
         }
-        document.getElementById('home').setAttribute("style",`border-bottom-left-radius:${brdR}%;border-bottom-right-radius:${brdR}%;`);
+        if(window.innerWidth > 516){
+            document.getElementById('home').setAttribute("style",`border-bottom-left-radius:${brdR}%;border-bottom-right-radius:${brdR}%;`);
+        }
     });
     var edu = document.querySelectorAll(".collapse");
         for(var i = 0;i<edu.length;i++){

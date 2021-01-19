@@ -543,6 +543,13 @@ nav a:hover::after{
     justify-content: center;
     text-align: center;
 }
+@media only screen and (max-width:516px){
+    #home
+    {
+        border-bottom-left-radius:0% ;
+        border-bottom-right-radius:0% ;
+    }
+}
 .container-body h1{
     text-transform: uppercase;
     color: #f2f3f7;
