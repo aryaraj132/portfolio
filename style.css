@@ -90,13 +90,12 @@ p{
     opacity: 0;
     width: 20px;
     border: 2px solid #a53838;
-    box-shadow: 0 0 20px #a53838;
+    box-shadow: 0 0 10px #a53838;
     border-radius: 50%;
     position: absolute;
     z-index: 111111;
     pointer-events: none;
     transition: 0.3s ease-in-out;
-    backdrop-filter: grayscale();
     transition-property: box-shadow, transform, border, visiblity, opacity,background;
     animation: mouse-pulse 0.5s infinite alternate;
 }
@@ -502,7 +501,6 @@ nav a:hover::after{
     justify-content: center;
     flex-wrap: wrap;
     background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(14px);
 }
 #about{
     width: 90% !important;
@@ -522,7 +520,6 @@ nav a:hover::after{
 .container-body{
     width: 100%;
     min-height: calc(100vh - 100px);
-    border: 1px solid transparent;
     padding-top: 50px;
     padding-left: 40px;
     padding-bottom: 50px;
@@ -537,8 +534,6 @@ nav a:hover::after{
     background: #4568dc; 
     background: -webkit-linear-gradient(to top, #4568dc, #b06ab3);
     background: linear-gradient(to top, #4568dc, #b06ab3);
-    border-bottom-left-radius:50% ;
-    border-bottom-right-radius:50% ;
     background-size: cover;
     justify-content: center;
     text-align: center;
@@ -568,6 +563,7 @@ nav a:hover::after{
 .section{
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
 .meta-title{
     font-size: 12px;
@@ -627,6 +623,7 @@ nav a:hover::after{
     transition-property: border-radius, background, color;
     text-transform: uppercase;
     backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
     box-shadow: none;
 }
 .collapse.active{
@@ -653,6 +650,7 @@ nav a:hover::after{
     width: 100%;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     opacity: 0;
@@ -743,6 +741,7 @@ nav a:hover::after{
     background: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 5px #000;
     backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
 }
 #projects .row{
     padding: 15px;
@@ -751,7 +750,8 @@ nav a:hover::after{
 .panel-title{
     position: absolute;
     backdrop-filter: blur(1px);
-    box-shadow: 0 0 10px #fff inset;
+    -webkit-backdrop-filter: blur(1px);
+    text-shadow: 0 0 5px #ffce63;
     height: 40px;
     width: 100%;
     display: flex;
