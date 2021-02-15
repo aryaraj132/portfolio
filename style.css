@@ -509,6 +509,7 @@ nav a:hover::after{
     background:rgba(255, 255, 255, 0.5);
     margin-top: -100px;
     border-radius: 20px;
+    min-height: calc(100vh - 300px) !important;
 }
 #about h3{
     color: rgba(0, 0, 0, 0.7);
